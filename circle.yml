@@ -1,0 +1,19 @@
+machine:
+  timezone:
+    Asia/Tokyo
+  python:
+    version: 2.7.3
+
+dependencies:
+  pre:
+    - pip install awscli
+
+test:
+  post:
+    curl --retry 10 --retry-delay 5 -v $S3_URL
+
+deployment:
+  s3:
+    branch: master
+    commands:
+    - sh ./deploy.sh
