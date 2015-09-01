@@ -13,6 +13,6 @@ aws configure set aws_secret_access_key $AWSSECRETKEY
 #aws configure set default.region ap-northeast-1
 #aws configure set default.output json
 
-aws s3 sync . s3://$BUCKET/ --exclude README.md --exclude circle.yml --exclude .git --exclude deploy.sh
+aws s3 sync content s3://$BUCKET/ 
 aws s3 ls s3://$BUCKET
 
