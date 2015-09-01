@@ -1,0 +1,59 @@
+﻿<html>
+<head>
+<title>Sample Page</title>
+<script type="text/javascript" src="jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  $("#ajax_error").toggle(false);
+
+  $("#save").click(function() {
+    $("#ajax_error").toggle(false);
+    ajaxSave();
+  });
+});
+
+function ajaxSave() {
+  var data = {
+    "operation" : "create",
+    "user" : {
+      "name" : $("#name").val(),
+      "age"  : $("#age").val()
+    }
+  };
+  $.ajax({
+    url: 'https://fdecokj40d.execute-api.us-west-2.amazonaws.com/prod/user',
+    type: 'POST',
+    data: JSON.stringify(data),
+    dataType: 'json',
+    success: function(data, status, xhr) {
+      // alert("success:" + data.message + "(" + xhr.status + ")");
+    },
+    error: function(XMLHttpRequest, textStatus, errorThrown) {
+      $("#ajax_error").toggle(true);
+      $("#XMLHttpRequest").html("XMLHttpRequest : " + XMLHttpRequest.status);
+      $("#textStatus").html("textStatus : " + textStatus);
+      $("#errorThrown").html("errorThrown : " + errorThrown.message);
+    }
+  });
+}
+</script>
+</head>
+<body>
+ <h1>Sample Page</h1>
+
+ <p>
+   <form action="#">
+    名前: <input id="name" type="text" name="name" /> <br />
+    年齢: <input id="age" type="text" name="age" /> <br />
+    <input id="save" type="button" name="save" value="保存" />
+   </form>
+ </p>
+
+ <div id="ajax_error">
+   <h1>Ajaxエラー情報を表示</h1>
+   <div id="XMLHttpRequest" ></div>
+   <div id="textStatus" ></div>
+   <div id="errorThrown" ></div>
+ </div>
+</body>
+</html>
