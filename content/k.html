@@ -16,7 +16,7 @@
         render: function() {
           return (
             <div className="record">
-              {this.props.name} / {this.props.price} / {this.props.at}
+              {this.props.create_time}: {this.props.name} / {this.props.price} / {this.props.at}
             </div>
           );
         }
@@ -27,11 +27,11 @@
           //alert(data.toString()+":" + Array.isArray(data));
           if ((Array.isArray(data) && data.length === 0) || (!Array.isArray(data))) {
              // dummy
-             data = [{"name":"","price":"","at":""}];
+             data = [{"name":"","price":"","at":"","create_time":""}];
           }
           var recordNodes = data.map(function (r) {
             return (
-              <Record name={r.name} price={r.price} at={r.at}></Record>
+              <Record name={r.name} price={r.price} at={r.at} create_time={r.create_time}></Record>
             );
           });
           return (
