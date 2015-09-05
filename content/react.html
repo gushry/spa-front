@@ -17,7 +17,7 @@
           return (
             <div className="comment">
               <h2 className="commentAuthor">
-                {this.props.author}({this.props.email})
+                {this.props.author}
               </h2>
               {this.props.children}
             </div>
@@ -26,7 +26,7 @@
       });
       var CommentList = React.createClass({
         render: function() {
-          var data = this.props.data
+          var data = this.props.data.Items
           //alert(data.toString()+":" + Array.isArray(data));
           if ((Array.isArray(data) && data.length === 0) || (!Array.isArray(data))) {
              // dummy
