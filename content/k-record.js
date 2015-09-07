@@ -14,10 +14,12 @@ var Record = React.createClass({
 var RecordList = React.createClass({
   render: function() {
     var data = this.props.data.Items
-    //alert(data.toString()+":" + Array.isArray(data));
-    if ((!Array.isArray(data))) {
-       // dummy
-       data = [{"name":"","price":"","at":"","create_time":""}];
+
+    if (typeof data === "undefined") {
+       // initial
+       return (
+          <div className="recordList"></div>
+       );
     }
     var recordNodes = data.map(function (r) {
       return (
@@ -85,7 +87,9 @@ var RecordBox = React.createClass({
       type: 'POST',
       data: JSON.stringify(d),
       success: function(data) {
-        this.setState({data: data});
+        console.log("POST result:" + data);
+        this.loadRecordsFromServer();
+        //this.setState({data: data});
       }.bind(this),
       error: function(xhr, status, err) {
         console.error(this.props.url, status, err.toString());
