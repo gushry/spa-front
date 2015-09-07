@@ -15,7 +15,7 @@ var RecordList = React.createClass({
   render: function() {
     var data = this.props.data.Items
     //alert(data.toString()+":" + Array.isArray(data));
-    if ((Array.isArray(data) && data.length === 0) || (!Array.isArray(data))) {
+    if ((!Array.isArray(data))) {
        // dummy
        data = [{"name":"","price":"","at":"","create_time":""}];
     }
@@ -112,6 +112,6 @@ var RecordBox = React.createClass({
 
 React.render(
   <RecordBox url={recordAPI} pollInterval={2000} />,
-  document.getElementById('record')
+  document.getElementById('recordArea')
 );
 
