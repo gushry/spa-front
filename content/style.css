@@ -1,0 +1,109 @@
+﻿
+@charset "UTF-8";
+
+body {
+	-webkit-font-smoothing: antialiased;
+	-ms-font-smoothing: antialiased;
+}
+input[type="submit"] {
+	-webkit-appearance: none;
+}
+
+#wrapper {
+	overflow: hidden;
+}
+
+/*↓フォントの読み込み*/
+@font-face {
+	font-family: "genBold";
+	src: url("font/SourceHanSans-Bold-j3.woff") format('woff');
+}
+/*↑フォントの読み込み*/
+
+body {
+	background: url(img/washi.jpg);
+}
+
+h1 {
+	font-family: 'Linden Hill', serif;
+	color: #472300;
+	font-size: 320%;
+}
+
+p {
+	font-family: 'Linden Hill', serif;
+	font-size: 140%;
+	line-height: 150%;
+	color: #472300;
+	text-align: justify;
+	text-justify: inter-ideograph;
+}
+
+.jidai-img {
+
+}
+
+.box-a {
+	display: block;
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: 280px;
+	overflow: hidden;
+	position: relative;
+}
+
+.box-a img {
+	display: block;
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	min-width: 100%;
+	min-height: 100%;
+}
+
+.box-b {
+	margin-bottom: 10px;
+}
+
+.box-c {
+	margin-bottom: 30px;
+}
+
+.button {
+	display: block;
+	text-align: center;
+	text-decoration:none;
+	font-family: "genBold";
+	font-size:150%;
+	background: url(img/btn-back.jpg);
+	width: 200px;
+	color: #decc91;
+	margin: 0 auto;
+	padding: 8px;
+	border: none;
+	border-radius:5px;
+	outline: solid 2px #decc91;
+	outline-offset: -6px;
+	box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.4);
+}
+
+.button:hover {
+	display: block;
+	text-align: center;
+	text-decoration:none;
+	font-family: "genBold";
+	font-size:150%;
+	background: url(img/btn-back.jpg);
+	width: 200px;
+	color: #decc91;
+	margin: 0 auto;
+	padding: 8px;
+	border: none;
+	outline: solid 2px #decc91;
+	outline-offset: -6px;
+	box-shadow: 1px 1px 3px 0px rgba(0,0,0,0.4);
+}
